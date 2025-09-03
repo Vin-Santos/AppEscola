@@ -281,7 +281,7 @@ const placeUnitsandLessons = (sectionData, userData) => {
 </a>
 </div>
 <div class="section-name-header">
-<div class="arrow" onclick="placeSectionList();"
+<div class="arrow"
   ><img alt="" src="../assets/svg/back-button-white.svg"
 />
 <img alt="" src="../assets/svg/up-arrow-section.svg"

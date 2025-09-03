@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/landingpage.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/landingpage.js" defer></script>
+    <script src="./js/loadanimationindex.js" defer></script>
+    <title>BrainGame</title>
+    <link rel="icon" href="./assets/images/favicon.ico" />
+  </head>
+  <body>
+    <header class="landing-header">
+      <!-- //navbar in landing page -->
+      <div class="header-navbar">
+        <nav class="landing-navbar">
+          <a>
+            <img
+              alt="BrainGame"
+              class="landing-header-logo"
+              src="./assets/svg/BrainGame_landing_header_logo.svg"
+            />
+          </a>
+          <div class="select-site-language">
+            <button class="site-language-button">
+              <span id="site-language"> </span>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- content below navbar -->
+      <div class="header-logging">
+        <div class="left-logging-header" id="left-logging-header"></div>
+        <div class="right-logging-header">
+          <h1 id="header-text"></h1>
+          <div class="right-logging-button-section">
+            <div class="get-started-btn-div">
+              <button
+                class="logging-get-started-button button-div"
+                onclick="getStartedButtonAnimation();"
+                id="get-started-button"
+              >
+                <span id="get-started-text"></span>
+              </button>
+            </div>
+            <div class="already-have-account-btn-div">
+              <button
+                class="logging-already-have-account-button button-div"
+                onclick="alreadyAccountButtonAnimation();"
+                id="already-have-account-button"
+              >
+                <span id="already-have-account-text"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- scrollable navbar -->
+
+
+      <script>
+        const countriesList = document.querySelector(".countries-list");
+        const itemsToShow = 7;
+        const itemsToScroll = 2;
+        let currentIndex = 0;
+
+        function scrollNavbar(direction) {
+          const itemWidth = countriesList.firstElementChild.offsetWidth + 10; // 10 is the gap between items
+
+          if (direction === "left" && currentIndex > 0) {
+            currentIndex -= itemsToScroll;
+          } else if (
+            direction === "right" &&
+            currentIndex < countriesList.children.length - itemsToShow
+          ) {
+            currentIndex += itemsToScroll;
+          }
+
+          countriesList.style.transform = `translateX(-${
+            currentIndex * itemWidth
+          }px)`;
+        }
+      </script>
+    </header>
+    <!-- section below scrollable navbar -->
+    <section class="BrainGame-features">
+      <section class="feature-class features-column">
+        <div class="BrainGame-features-text">
+          <h2 class="BrainGame-features-text-head" id="feature-head-1"></h2>
+          <p class="BrainGame-features-text-body">
+            <span id="feature-body-1"></span>
+          </p>
+        </div>
+        <div
+          id="BrainGame-feature-animation-free-fun-effective"
+          class="BrainGame-feature-animation"
+        ></div>
+      </section>
+
+      <section class="feature-class features-column-reverse">
+        <div
+          id="BrainGame-feature-animation-backed-by-science"
+          class="BrainGame-feature-animation"
+        ></div>
+        <div class="BrainGame-features-text">
+          <h2 class="BrainGame-features-text-head" id="feature-head-2"></h2>
+          <p class="BrainGame-features-text-body">
+            <span id="feature-body-2"></span>
+          </p>
+        </div>
+      </section>
+      <section class="feature-class features-column">
+        <div class="BrainGame-features-text">
+          <h2 class="BrainGame-features-text-head" id="feature-head-3"></h2>
+          <p class="BrainGame-features-text-body">
+            <span id="feature-body-3"></span>
+          </p>
+        </div>
+        <div
+          id="BrainGame-feature-animation-stay-motivated"
+          class="BrainGame-feature-animation"
+        ></div>
+      </section>
+      <section class="feature-class features-column-reverse">
+        <div
+          id="BrainGame-feature-animation-personalised-learning"
+          class="BrainGame-feature-animation"
+        ></div>
+        <div class="BrainGame-features-text">
+          <h2 class="BrainGame-features-text-head" id="feature-head-4"></h2>
+          <p class="BrainGame-features-text-body">
+            <span id="feature-body-4"></span>
+          </p>
+        </div>
+      </section>
+    </section>
+    <!-- landing page floating with get statrted button -->
+    <section class="floating-landing-page">
+      <div class="floating-footer">
+        <div class="footer-get-started-section">
+          <h1 class="footer-get-started-heading" id="float-heading"></h1>
+          <div class="floating-get-started-button">
+            <div class="get-started-btn-div">
+              <button
+                class="logging-get-started-button button-div"
+                onclick="getStartedButtonAnimation();"
+                id="get-started-button"
+              >
+                <span id="bottom-get-started-text"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="floating-animation">
+          <div id="phone-animation"></div>
+        </div>
+      </div>
+    </section>
+    <div class="lastDiv">
+      <div class="divInLastDiv">
+        <div class="containList">
+          <div class="list-head">
+            <div class="headings">
+              <div>
+                <div class="mainHeading" id="aboutUs">About us</div>
+                <ul>
+                  <li>
+                    <a href="">Courses</a>
+                  </li>
+                  <li><a href="">Mission</a></li>
+                  <li><a href="">Approach</a></li>
+                  <li><a href="">Efficacy</a></li>
+                  <li>
+                    <a href="https://careers.BrainGame.com/about">Team</a>
+                  </li>
+                  <li>
+                    <a href="https://research.BrainGame.com">Research</a>
+                  </li>
+                  <li>
+                    <a href="https://careers.BrainGame.com">Careers</a>
+                  </li>
+                  <li>
+                    <a href="https://design.BrainGame.com">Brand guidelines</a>
+                  </li>
+                  <li>
+                    <a href="https://store.BrainGame.com/">Store</a>
+                  </li>
+                  <li>
+                    <a href="https://press.BrainGame.com">Press</a>
+                  </li>
+                  <li>
+                    <a href="https://investors.BrainGame.com">Investors</a>
+                  </li>
+                  <li><a href="">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="headings">
+              <div>
+                <div class="mainHeading">Products</div>
+                <ul>
+                  <li>
+                    <a class="" href="">BrainGame</a>
+                  </li>
+                  <li>
+                    <a href="https://schools.BrainGame.com"
+                      >BrainGame for Schools</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://englishtest.BrainGame.com/en"
+                      >BrainGame English Test</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.BrainGame.com/abc">BrainGame ABC</a>
+                  </li>
+                  <li>
+                    <a href="https://www.BrainGame.com/math">BrainGame Math</a>
+                  </li>
+                  <li>
+                    <a href="https://podcast.BrainGame.com">Podcast</a>
+                  </li>
+                  <li><a href="">BrainGame for Business</a></li>
+                  <li><a href="">Super BrainGame</a></li>
+                  <li><a href="">Gift Super BrainGame</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="headings">
+              <div>
+                <div class="mainHeading">Apps</div>
+                <ul>
+                  <li>
+                    <a
+                      href="//play.google.com/store/apps/details?hl=en&amp;id=com.BrainGame&amp;referrer=utm_source%3DBrainGame.com%26utm_medium%3DBrainGame_web%26utm_content%3Ddownload_button%26utm_campaign%3Dsite_map"
+                      >BrainGame for Android</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="//itunes.apple.com/app/BrainGame-learn-spanish-french/id570060128?mt=8"
+                      >BrainGame for iOS</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://apps.apple.com/app/BrainGame-abc-learn-to-read/id1440502568?pt=1374442&amp;ct=Site%20map&amp;mt=8"
+                      >BrainGame ABC (iOS)</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="headings">
+              <div>
+                <div class="mainHeading">Help and support</div>
+                <ul>
+                  <li>
+                    <a href="https://support.BrainGame.com/hc/en-us"
+                      >BrainGame FAQs</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://BrainGameschools.zendesk.com/hc/en-us"
+                      >Schools FAQs</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://englishtest.BrainGame.com/faq"
+                      >BrainGame English Test FAQs</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://status.BrainGame.com/">Status</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="headings">
+              <div>
+                <div class="mainHeading">Privacy and terms</div>
+                <ul>
+                  <li><a href="">Community guidelines</a></li>
+                  <li><a href="">Terms</a></li>
+                  <li><a href="">Privacy</a></li>
+                  <li>
+                    <a href=""
+                      >Respecting your "do not sell my personal information"
+                      rights</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="headings"></div>
+              <div>
+                <div class="mainHeading">Social</div>
+                <ul>
+                  <li>
+                    <a href="https://blog.BrainGame.com">Blog</a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/BrainGame">Instagram</a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/BrainGame">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/BrainGame">Twitter</a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/user/BrainGame">YouTube</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script src="./js/pointerpage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.7/lottie.min.js"></script>
+</html>
